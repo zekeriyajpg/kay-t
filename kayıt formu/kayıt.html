@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayıt Formu</title>
+  <style>
+    /* Genel Stil */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .flex-container label {
+      margin: 0;
+      display: inline;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    #submit {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    #submit:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1 id="title">Kayıt Formu</h1>
+    <p id="description">Lütfen aşağıdaki formu doldurarak kayıt olunuz.</p>
+    
+    <form id="survey-form">
+      <!-- İsim Girişi -->
+      <label id="name-label" for="name">Adınız:</label>
+      <input type="text" id="name" name="name" placeholder="Adınızı girin" required>
+
+      <!-- E-posta Girişi -->
+      <label id="email-label" for="email">E-posta:</label>
+      <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+
+      <!-- Yaş Girişi -->
+      <label id="number-label" for="number">Yaşınız:</label>
+      <input type="number" id="number" name="age" placeholder="Yaşınızı girin" min="1" max="120" required>
+
+      <!-- Cinsiyet Dropdown -->
+      <label for="dropdown">Cinsiyet:</label>
+      <select id="dropdown" name="gender" required>
+        <option value="">Seçiniz</option>
+        <option value="male">Erkek</option>
+        <option value="female">Kadın</option>
+        <option value="other">Diğer</option>
+      </select>
+
+      <!-- Radyo Düğmeleri -->
+      <label>Tercih Ettiğiniz İletişim Yöntemi:</label>
+      <div class="flex-container">
+        <input type="radio" id="email-contact" name="contact" value="email" required>
+        <label for="email-contact">E-posta</label>
+        
+        <input type="radio" id="phone-contact" name="contact" value="phone">
+        <label for="phone-contact">Telefon</label>
+      </div>
+
+      <!-- Onay Kutuları -->
+      <label>Hobileriniz:</label>
+      <div class="flex-container">
+        <input type="checkbox" id="hobby-sports" value="sports">
+        <label for="hobby-sports">Spor</label>
+
+        <input type="checkbox" id="hobby-music" value="music">
+        <label for="hobby-music">Müzik</label>
+      </div>
+
+      <!-- Metin Alanı -->
+      <label for="comments">Ek Yorumlar:</label>
+      <textarea id="comments" name="comments" placeholder="Buraya yorumlarınızı yazabilirsiniz..."></textarea>
+
+      <!-- Gönder Butonu -->
+      <input type="submit" id="submit" value="GÖNDER">
+    </form>
+  </div>
+</body>
+</html>
